@@ -241,7 +241,7 @@ hr {
   margin: 40px 0;
 }
 blockquote {
-  border-left: 4px solid #ddd;
+  border-left: 4px solid #4b8bf4;
   color: #666;
   margin: 0;
   padding: 0 15px;
@@ -1671,7 +1671,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #6f47c7;
+  background: #ffc183;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2862,7 +2862,6 @@ ul.breadcrumb li+li:last-child {
   }
 }
 p {
-  text-indent: 2em;
   line-height: 1.5em;
 }
 .site-title {
@@ -2879,4 +2878,12 @@ p {
   font-family: "Times New Roman";
   font-style: italic;
   font-size: 1em;
+}
+li {
+  padding-top: 1em;
+  line-height: 1.5em;
+}
+blockquote {
+  background-color: #dffff7;
+  border-left: 4px solid #48f0d9;
 }
