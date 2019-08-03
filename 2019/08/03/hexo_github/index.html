@@ -70,7 +70,7 @@
 <meta property="og:image" content="http://yoursite.com/pic/gh3.png">
 <meta property="og:image" content="http://yoursite.com/pic/gh4.png">
 <meta property="og:image" content="http://yoursite.com/pic/hexo1.png">
-<meta property="og:updated_time" content="2019-08-03T17:37:39.378Z">
+<meta property="og:updated_time" content="2019-08-03T19:49:43.623Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo + Github 博客搭建，2019年最新详细教程（环境搭建篇）">
 <meta name="twitter:description" content="前言：虽然有许多优秀的博客网站，只需注册，就可以免费使用其基础功能。这种博客无需自己维护，省心省事。但人生就是要来折腾才精彩啊！那要自己建博客网站又太麻烦，于是就选择了Hexo框架放在Github免费托管，又美观又免费，关键这个博客站，干净纯粹又清爽，可以专注的写专注的看。 一路爬帖子，遇到好多坑，好不容易搞好了，记录一下过程，供自己以后翻阅复习，也许会让大家少走弯路。我是小白，本教程也只写给小白">
@@ -86,6 +86,16 @@
 
   <title>Hexo + Github 博客搭建，2019年最新详细教程（环境搭建篇） | Elume's Blog</title>
   
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100451136-2"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-100451136-2');
+    }
+  </script>
 
 
 
@@ -266,7 +276,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Elume">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -308,7 +318,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-04 01:37:39" itemprop="dateModified" datetime="2019-08-04T01:37:39+08:00">2019-08-04</time>
+                <time title="修改时间：2019-08-04 03:49:43" itemprop="dateModified" datetime="2019-08-04T03:49:43+08:00">2019-08-04</time>
               </span>
             
           
@@ -337,6 +347,24 @@
                 <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
               </span>
             </span>
+          
+            
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="fa fa-comment-o"></i>
+    </span>
+    
+      <span class="post-meta-item-text">评论数：</span>
+    
+  
+    <a href="/2019/08/03/hexo_github/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/03/hexo_github/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
           <br>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -410,13 +438,13 @@
 </li>
 <li><p>初始化博客站点：</p>
 <ul>
-<li><p>我们所要做的就是在电脑里给自己的博客找一个窝，一般会放在D盘根目录（路径最好不要出现中文），这样即使系统C盘挂了，你的博客数据仍然可以健在，数据无价啊！我们暂且在D盘根目录新建一个文件夹：D：\blog</p>
-</li>
-<li><p>然后，打开D盘blog文件夹，鼠标右键（注意要在blog文件夹里点击右键），Git Bash Here，然后输入命令：</p>
+<li>我们所要做的就是在电脑里给自己的博客找一个窝，一般会放在D盘根目录（路径最好不要出现中文），这样即使系统C盘挂了，你的博客数据仍然可以健在，数据无价啊！我们暂且在D盘根目录新建一个文件夹：D：\blog</li>
+<li>然后，打开D盘blog文件夹，鼠标右键（注意要在blog文件夹里点击右键），Git Bash Here，然后输入命令：</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>若提示：hexo不是内部命令。请为Node.js添加全局环境变量：我的电脑=&gt;属性=&gt;高级系统设置=&gt;环境变量=&gt;系统变量=&gt;Path=&gt;新建=&gt;C:\Program Files\nodejs\node_global（如果你安装在了其他地方，请自行更改此处地址）。然后在用户变量部分，新建=&gt;变量名=&gt;NODE_PATH / 变量值=&gt;C:\Program Files\nodejs\node_global（如果你安装在了其他地方，请自行更改此处地址）。</p>
-</li>
+
+<ul>
+<li>若提示：hexo不是内部命令。请为Node.js添加全局环境变量：我的电脑=&gt;属性=&gt;高级系统设置=&gt;环境变量=&gt;系统变量=&gt;Path=&gt;新建=&gt;C:\Program Files\nodejs\node_global（如果你安装在了其他地方，请自行更改此处地址）。然后在用户变量部分，新建=&gt;变量名=&gt;NODE_PATH / 变量值=&gt;C:\Program Files\nodejs\node_global（如果你安装在了其他地方，请自行更改此处地址）。</li>
 </ul>
 </li>
 <li><p>初始化进程结束后，直接输入代码，自动安装依赖包到blog文件夹：</p>
@@ -464,15 +492,70 @@
 
     </div>
 
+
+
+
     
     
     
+
+
+
+<div>
+      
+        
+      
+</div>
+
+
+
+
+<div>
+  
+    
+
+
+
+
+<div>
+    
+        <div style="text-align:center;color: #aaaaaa;font-size:1em;">-------------本文结束 <i class="fa fa-paw"></i> 感谢您的阅读-------------</div>
+        <div style="text-align:center;color: #aaaaaa;font-size:1em; margin: 10px 0 0 0">请作者喝杯茶</div>
+    
+</div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+      <div>
+        <div id="reward-container">
+  <div></div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+  </div>
+</div>
+
+      </div>
 
     <footer class="post-footer">
           
         
         <div class="post-tags">
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
           
         </div>
         <div class="post-nav">
@@ -500,6 +583,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
 
         </div>
@@ -529,6 +621,9 @@
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.png"
+      alt="Elume">
   <p class="site-author-name" itemprop="name">Elume</p>
   <div class="site-description motion-element" itemprop="description"></div>
 </div>
@@ -742,6 +837,32 @@
 
 
 
+
+    
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://Elume.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://yoursite.com/2019/08/03/hexo_github/";
+    this.page.identifier = "2019/08/03/hexo_github/";
+    this.page.title = 'Hexo + Github 博客搭建，2019年最新详细教程（环境搭建篇）';};
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://Elume.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 
 </body>

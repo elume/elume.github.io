@@ -75,6 +75,16 @@
 
   <title>标签: 操作技巧 | Elume's Blog</title>
   
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100451136-2"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-100451136-2');
+    }
+  </script>
 
 
 
@@ -332,6 +342,9 @@
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.png"
+      alt="Elume">
   <p class="site-author-name" itemprop="name">Elume</p>
   <div class="site-description motion-element" itemprop="description"></div>
 </div>
@@ -524,6 +537,18 @@
 
 
 
+
+    
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://Elume.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
 
 
 </body>
