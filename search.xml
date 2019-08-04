@@ -2,19 +2,19 @@
 <search>
   <entry>
     <title><![CDATA[Hexo-NexT主题-设置语言（2019年最新详细教程）]]></title>
-    <url>%2F2019%2F08%2F05%2Fnext1.1%2F</url>
+    <url>%2F2019%2F08%2F05%2Fhexo-next1.1%2F</url>
     <content type="text"><![CDATA[Hexo-NexT主题-语言设置 在blog根目录打开站点配置文件（config.yml）修改语言选项：]]></content>
       <categories>
         <category>博客</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>NexT</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[2019年最新详细教程（Hexo-NexT主题安装配置美化篇）]]></title>
-    <url>%2F2019%2F08%2F05%2Fnext%2F</url>
+    <url>%2F2019%2F08%2F05%2Fhexo-next%2F</url>
     <content type="text"><![CDATA[这篇只有我认为基础的设置，若是你想要很花哨的那种，请移步。我的想法很简单，本来就是冲着简洁来的，就没有想着搞太复杂，中规中矩又不失典雅。这一套做下来，就可以安安心心写博客了。西瓜皮再好看，不甜，就尴尬了。站点再好看，没有高质量的内容，那也就是一花瓶。 一、安装并启用NexT主题 Hexo的主题有很多，请在官网选择，https://hexo.io/themes/ ，不要问我为什么选择NexT，我的回答是：萝卜白菜各有所爱 先打开blog根目录，鼠标右键，Git Bash Here，输入命令： 1$ git clone https://github.com/iissnan/hexo-theme-next themes/next 在blog根目录打开站点配置文件：config.yml，更改主题配置： 1theme: next 二、功能配置 排序并非是按重要性，想到什么就写什么啦 更改站点语言 文章阅读时间及次数/网站访问人数及次数 评论功能 代码块复制按钮 添加头像 回到顶部按钮的百分比显示 搜索功能 标签与分类页 文章结束标记 打赏功能 三、主题美化 板块圆角与透明度 动态背景 博客名字/作者名字的字体样式 文章标题字体样式 按钮样式 返回顶部按钮样式 标签样式 底部红心 引用模块样式 代码块样式 提示模块样式 超链接样式]]></content>
       <categories>
         <category>博客</category>
