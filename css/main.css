@@ -1746,7 +1746,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #5e7eb9;
+  background: #85ff52;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1996,7 +1996,7 @@ pre .javascript .function {
   animation: iconAnimate 1.33s ease-in-out infinite;
 }
 .with-love {
-  color: #808080;
+  color: #ff0000;
   display: inline-block;
   margin: 0 5px;
 }
@@ -2951,6 +2951,7 @@ p {
   font-family: "Times New Roman";
   font-style: italic;
   font-size: 1.6em;
+  color: #fff;
 }
 .site-subtitle {
   font-family: "Times New Roman";
@@ -2971,6 +2972,7 @@ blockquote {
   background-color: #fce5cd;
   border-left: 8px solid #e69138;
   padding: 10px 10px 1px 10px;
+  border-radius: 0.5em;
 }
 .menu {
   font-size: 1.1em;
@@ -2982,7 +2984,6 @@ a.btn {
   border: 2px solid #000;
   border-radius: 1em;
   color: #333;
-  font-weight: bold;
   background: rgba(255,255,255,0.5);
 }
 .back-to-top {
@@ -2996,6 +2997,20 @@ a.btn {
   border-radius: 1em;
   margin-top: 0.5em;
   background: rgba(255,255,255,0.5);
+/* unvisited link */
+/* visited link */
+/* mouse over link */
+}
+.header-inner a:link {
+  text-decoration: none;
+  color: #000;
+}
+.header-inner a:visited {
+  text-decoration: none;
+  color: #000;
+}
+.header-inner a:hover {
+  color: #f00;
 }
 .sidebar-inner {
   border-radius: 1em;
@@ -3012,4 +3027,15 @@ a.btn {
 .comments {
   border-radius: 1em;
   background: rgba(255,255,255,0.5);
+}
+a:link {
+  text-decoration: none;
+  color: #09bace;
+}
+a:visited {
+  text-decoration: none;
+  color: #000;
+}
+a:hover {
+  color: #f00;
 }
