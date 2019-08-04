@@ -1068,7 +1068,7 @@ pre .javascript .function {
   right: 30px;
   text-align: center;
   transition-property: bottom;
-  width: 24px;
+  width: initial;
   z-index: 1050;
   transition-delay: 0s;
   transition-duration: 0.2s;
@@ -1588,8 +1588,7 @@ pre .javascript .function {
   line-height: 1.2;
   position: relative;
   vertical-align: top;
-  font-size: 1em;
-  font-weight: bold;
+  font-size: 0.8em;
 }
 .posts-expand .post-title-link::before {
   background-color: #000;
@@ -1747,7 +1746,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #858cb6;
+  background: #b8abff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2060,6 +2059,14 @@ pre .javascript .function {
   50%, 70% {
     transform: scale(1.1);
   }
+}
+.gt-header a,
+.gt-comments a,
+.gt-popup a {
+  border-bottom: none;
+}
+.gt-container .gt-popup .gt-action.is--active::before {
+  top: 0.7em;
 }
 .local-search-pop-overlay {
   background-color: rgba(0,0,0,0.3);
@@ -2948,6 +2955,7 @@ p {
 .site-subtitle {
   font-family: "Times New Roman";
   font-style: italic;
+  font-style: italic;
   font-size: 1em;
 }
 .site-author-name {
@@ -2966,4 +2974,38 @@ blockquote {
 }
 .menu {
   font-size: 1.1em;
+}
+.content {
+  margin-top: 0.5em;
+}
+a.btn {
+  border: 2px solid #000;
+  border-radius: 1em;
+  color: #333;
+  font-weight: bold;
+  background: rgba(255,255,255,0.5);
+}
+.back-to-top {
+  width: 5em;
+  height: 2em;
+  border-radius: 0.6em;
+  padding: 0 0 0 0;
+  background-color: #000;
+}
+.header-inner {
+  border-radius: 1em;
+  margin-top: 0.5em;
+  background: rgba(255,255,255,0.5);
+}
+.sidebar-inner {
+  border-radius: 1em;
+  margin-top: 0.5em;
+  background: rgba(255,255,255,0.5);
+}
+.post-block {
+  border-radius: 1em;
+  background: rgba(255,255,255,0.5);
+}
+#posts > article + article .post-block {
+  border-radius: 1em;
 }
