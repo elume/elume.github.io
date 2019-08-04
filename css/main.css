@@ -1746,7 +1746,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #05ff24;
+  background: #65b4ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2955,7 +2955,6 @@ p {
 }
 .site-subtitle {
   font-family: "Times New Roman";
-  font-style: italic;
   font-style: italic;
   font-size: 1em;
 }
