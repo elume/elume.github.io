@@ -48,7 +48,7 @@ NexT.utils = {
   registerCopyCode: function() {
     $('.highlight').not('.gist .highlight').each(function(i, e) {
       function initButton(button) {
-        if (CONFIG.copycode.style === 'mac') {
+        if (CONFIG.copycode.style === 'elume') {
           button.html('<i class="fa fa-clipboard"></i>');
         } else {
           button.text(CONFIG.translation.copy_button);
