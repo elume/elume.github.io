@@ -1746,7 +1746,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #6cf9ff;
+  background: #ff70ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2954,9 +2954,9 @@ p {
   line-height: 1.5em;
 }
 .site-title {
-  font-family: "STXingkai";
+  font-family: "Times New Roman";
   font-style: italic;
-  font-size: 2em;
+  font-size: 1.5em;
   color: #fff;
 }
 .site-subtitle {

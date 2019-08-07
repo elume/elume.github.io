@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo-NexT主题-添加评论功能(gitalk)（2019年最新详细教程）]]></title>
+    <url>%2F2019%2F08%2F07%2Fhexo-next1.3%2F</url>
+    <content type="text"><![CDATA[加评论功能，我的选择是，已经集成到主题里的 gitalk 一、 注册github应用： 注册页面：https://github.com/settings/applications/new 填好之后，点击绿色按钮注册应用。然后你会看到一个页面： 二、 修改主题配置文件： 把刚才注册后拿到的 Client ID 和 Client Secret 复制到主题配置文档里，然后填写其他信息。 三、显示效果： 可以看本文下方的评论区，另附： 官方Demo 官方中文说明]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo-NexT主题-文章字数及时间/文章和网站访问人数及次数（2019年最新详细教程）]]></title>
     <url>%2F2019%2F08%2F06%2Fhexo-next1.2%2F</url>
     <content type="text"><![CDATA[文章的时间\次数；2. 网站访问人数\次数；3. 文章阅读次数 一、 字数与时间：1. 安装插件： 进入blog文件夹，鼠标右键，Git Bash Here, 输入命令： 1npm i hexo-symbols-count-time --save 2. 修改配置文件： 主题配置文件，直接修改；站点配置文件，拉倒最后新增内容，保存。 站点配置文件新增字段： 1234567# Post wordcount display settingssymbols_count_time: symbols: true time: true total_symbols: true total_time: true exclude_codeblock: false 3. 效果：请查看本文开头二、 访问次数、人数：1. 修改配置文件： 2. 加入自定义内容： 3. 效果：请查看本文开头和结尾附录：NexT主题图标设置]]></content>
