@@ -1746,7 +1746,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffb13c;
+  background: #6cf9ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -3008,7 +3008,7 @@ a.btn {
 .header-inner {
   border-radius: 1em;
   margin-top: 0.5em;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.6);
 /* unvisited link */
 /* visited link */
 /* mouse over link */
@@ -3027,7 +3027,7 @@ a.btn {
 .sidebar-inner {
   border-radius: 1em;
   margin-top: 0.5em;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.6);
 }
 .sidebar {
   border-radius: 1em;
@@ -3036,14 +3036,14 @@ a.btn {
 }
 .post-block {
   border-radius: 1em;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.6);
 }
 #posts > article + article .post-block {
   border-radius: 1em;
 }
 .comments {
   border-radius: 1em;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.6);
 }
 a:link {
   text-decoration: none;
