@@ -24,7 +24,7 @@ h1 {
 hr {
   box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
-  overflow: visible; /* 2 */
+  overflow: visible; /* 1 */
 }
 pre {
   font-family: monospace, monospace; /* 1 */
@@ -237,7 +237,7 @@ hr {
   background-color: #ddd;
   background-image: repeating-linear-gradient(-45deg, #fff, #fff 4px, transparent 4px, transparent 8px);
   border: none;
-  height: 3px;
+  height: 1px;
   margin: 40px 0;
 }
 blockquote {
@@ -533,7 +533,7 @@ pre code {
   padding-left: 10px;
   padding-right: 10px;
   text-align: right;
-  border-radius: 10px 0 0 10px;
+  border-radius: 5px 0 0 5px;
 }
 .highlight .code pre {
   background-color: #6d6e6a;
@@ -1437,8 +1437,8 @@ pre .javascript .function {
   box-sizing: border-box;
   margin: 0 auto 20px;
   padding: 0px;
-  border-radius: 1em;
-  box-shadow: 0px 0px 10px 1px #aaa;
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 10px -4px #000;
 }
 .post-gallery {
   border-collapse: separate;
@@ -1746,7 +1746,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #7e99ff;
+  background: #4d5e6f;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2975,12 +2975,12 @@ li {
 }
 blockquote {
   border-left: 0.5em solid #3295a3;
-  box-shadow: 0px 0px 10px 1px #aaa;
+  box-shadow: 0px 10px 3px -9px #888;
   color: #666;
   background-color: #e3f2f4;
   margin: 0;
   padding: 0 15px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 blockquote cite::before {
   content: '-';
@@ -3072,9 +3072,14 @@ h5 {
   font-size: 1em;
 }
 .gutter {
-  border-radius: 10px;
+  border-radius: 5px;
 }
 figure.highlight {
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px 1px #aaa;
+  border-radius: 5px;
+  box-shadow: 0px 3px 5px -4px #000;
+}
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0,0,0,0), #000, rgba(0,0,0,0));
 }

@@ -1,43 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hexo-NexT主题-添加评论功能(gitalk)（2019年最新详细教程）]]></title>
-    <url>%2F2019%2F08%2F07%2Fhexo-next1.3%2F</url>
-    <content type="text"><![CDATA[加评论功能，我的选择是，已经集成到主题里的 gitalk 一、 注册github应用： 注册页面：https://github.com/settings/applications/new 填好之后，点击绿色按钮注册应用。然后你会看到一个页面： 二、 修改主题配置文件： 把刚才注册后拿到的 Client ID 和 Client Secret 复制到主题配置文档里，然后填写其他信息。 三、显示效果： 可以看本文下方的评论区，另附： 官方Demo 官方中文说明]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hexo-NexT主题-文章字数及时间/文章和网站访问人数及次数（2019年最新详细教程）]]></title>
-    <url>%2F2019%2F08%2F06%2Fhexo-next1.2%2F</url>
-    <content type="text"><![CDATA[文章的时间\次数；2. 网站访问人数\次数；3. 文章阅读次数 一、 字数与时间：1. 安装插件： 进入blog文件夹，鼠标右键，Git Bash Here, 输入命令： 1npm i hexo-symbols-count-time --save 2. 修改配置文件： 主题配置文件，直接修改；站点配置文件，拉倒最后新增内容，保存。 站点配置文件新增字段： 1234567# Post wordcount display settingssymbols_count_time: symbols: true time: true total_symbols: true total_time: true exclude_codeblock: false 3. 效果：请查看本文开头二、 访问次数、人数：1. 修改配置文件： 2. 加入自定义内容： 3. 效果：请查看本文开头和结尾附录：NexT主题图标设置]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hexo-NexT主题-设置语言（2019年最新详细教程）]]></title>
-    <url>%2F2019%2F08%2F05%2Fhexo-next1.1%2F</url>
-    <content type="text"><![CDATA[Hexo-NexT主题-语言设置 在blog根目录打开站点配置文件（config.yml）修改语言选项：]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>NexT</tag>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[2019年最新详细教程（Hexo-NexT主题安装配置美化篇）]]></title>
     <url>%2F2019%2F08%2F05%2Fhexo-next%2F</url>
-    <content type="text"><![CDATA[这篇只有我认为基础的设置，若是你想要很花哨的那种，请移步。我的想法很简单，本来就是冲着简洁来的，就没有想着搞太复杂，中规中矩又不失典雅。这一套做下来，就可以安安心心写博客了。内容才是最重要的。 一、安装并启用NexT主题 Hexo的主题有很多，请在官网选择，https://hexo.io/themes/ ，不要问我为什么选择NexT，我的回答是：萝卜白菜各有所爱 1. 先打开blog根目录，鼠标右键，Git Bash Here，输入命令：1$ git clone https://github.com/iissnan/hexo-theme-next themes/next 2. 在blog根目录打开站点配置文件：config.yml，更改主题配置：1theme: next 二、功能配置 【未完待续】 排序并非是按重要性，想到什么就写什么啦 1. 更改站点语言2. 文章阅读时间及次数/网站访问人数及次数3. 评论功能4. 代码块复制按钮5. 添加头像6. 回到顶部按钮的百分比显示7. 搜索功能8. 标签与分类页9. 文章结束标记10. 打赏功能11. 加密文章三、主题美化1. 全站元素圆角化与透明度2. 动态背景3. 博客名字/作者名字的字体样式4. 文章标题字体样式5. 按钮样式6. 返回顶部按钮样式7. 标签样式8. 底部红心9. 引用模块样式10. 代码块样式11. 提示模块样式12. 超链接样式13. 代码模块复制按钮样式]]></content>
+    <content type="text"><![CDATA[这篇只有我认为基础的设置，若是你想要很花哨的那种，请移步。我的想法很简单，本来就是冲着简洁来的，就没有想着搞太复杂，中规中矩又不失典雅。这一套做下来，就可以安安心心写博客了。内容才是最重要的。 一、安装并启用NexT主题 Hexo的主题有很多，请在官网选择，https://hexo.io/themes/ ，不要问我为什么选择NexT，我的回答是：萝卜白菜各有所爱 1. 先打开blog根目录，鼠标右键，Git Bash Here，输入命令：1$ git clone https://github.com/iissnan/hexo-theme-next themes/next 2. 在blog根目录打开站点配置文件：config.yml，更改主题配置：1theme: next 二、功能配置 【未完待续】 排序并非是按重要性，想到什么就写什么啦 1. 更改站点语言2. 文章阅读时间及次数/网站访问人数及次数3. 评论功能4. 代码块复制按钮5. 添加头像6. 回到顶部按钮的百分比显示7. 搜索功能8. 标签与分类页9. 文章结束标记10. 打赏功能11. 加密文章三、主题美化1. 全站元素圆角化与透明度2. 动态背景3. 博客名字/作者名字的字体样式4. 文章标题字体样式5. 按钮样式6. 返回顶部按钮样式7. 标签样式8. 底部红心9. 引用模块样式10. 代码块样式11. 提示模块样式12. 超链接样式13. 代码模块复制按钮样式 Hexo-NexT主题-语言设置 在blog根目录打开站点配置文件（config.yml）修改语言选项： 字数与时间： 1. 安装插件： 进入blog文件夹，鼠标右键，Git Bash Here, 输入命令： 1npm i hexo-symbols-count-time --save 2. 修改配置文件： 主题配置文件，直接修改；站点配置文件，拉倒最后新增内容，保存。 站点配置文件新增字段： 1234567# Post wordcount display settingssymbols_count_time: symbols: true time: true total_symbols: true total_time: true exclude_codeblock: false 3. 效果：请查看本文开头 访问次数、人数： 1. 修改配置文件： 2. 加入自定义内容： 3. 效果：请查看本文开头和结尾 附录：NexT主题图标设置 注册github应用： 注册页面：https://github.com/settings/applications/new 填好之后，点击绿色按钮注册应用。然后你会看到一个页面： 修改主题配置文件： 把刚才注册后拿到的 Client ID 和 Client Secret 复制到主题配置文档里，然后填写其他信息。 显示效果： 可以看本文下方的评论区，另附： 官方Demo 官方中文说明]]></content>
       <categories>
         <category>博客</category>
       </categories>
