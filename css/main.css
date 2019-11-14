@@ -533,7 +533,7 @@ pre code {
   padding-left: 10px;
   padding-right: 10px;
   text-align: right;
-  border-radius: 5px 0 0 5px;
+  border-radius: 3px 0 0 3px;
 }
 .highlight .code pre {
   background-color: #6d6e6a;
@@ -1746,7 +1746,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #e8ec40;
+  background: #c89aff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2975,12 +2975,12 @@ li {
 }
 blockquote {
   border-left: 0.5em solid #3295a3;
-  box-shadow: 0px 3px 5px -4px #000;
+  box-shadow: 0px 2px 4px -3px #000;
   color: #666;
   background-color: #e3f2f4;
   margin: 0;
   padding: 0 15px;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 blockquote cite::before {
   content: '-';
@@ -3072,10 +3072,10 @@ h5 {
   font-size: 1em;
 }
 .gutter {
-  border-radius: 5px;
+  border-radius: 3px;
 }
 figure.highlight {
-  border-radius: 5px;
+  border-radius: 3px;
   box-shadow: 0px 3px 5px -4px #000;
 }
 hr {
