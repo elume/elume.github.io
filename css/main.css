@@ -1746,7 +1746,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffff25;
+  background: #25de1b;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2943,12 +2943,6 @@ ul.breadcrumb li+li:last-child {
   .pagination {
     margin: 8px 0 0;
   }
-}
-body {
-  background-image: url("/pic/123.png");
-  background-repeat: repeat;
-  background-attachment: fixed;
-  background-blend-mode: overlay;
 }
 p {
   line-height: 1.5em;
