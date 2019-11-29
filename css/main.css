@@ -1746,7 +1746,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffd79a;
+  background: #d97438;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2944,6 +2944,9 @@ ul.breadcrumb li+li:last-child {
     margin: 8px 0 0;
   }
 }
+body {
+  background-color: #f1f1f1;
+}
 p {
   line-height: 1.5em;
 }
@@ -2969,7 +2972,7 @@ li {
 }
 blockquote {
   border-left: 0.5em solid #3295a3;
-  box-shadow: 0px 2px 4px -3px #000;
+  box-shadow: 0px 1px 2px -1px #999;
   color: #666;
   background-color: #e3f2f4;
   margin: 0;
@@ -2984,7 +2987,7 @@ blockquote cite::before {
   font-size: 1.1em;
 }
 .content {
-  margin-top: 0.5em;
+  margin-top: 0em;
 }
 a.btn {
   border: 2px solid #000;
@@ -3000,9 +3003,9 @@ a.btn {
   background-color: #000;
 }
 .header-inner {
-  border-radius: 1em;
-  margin-top: 0.5em;
-  background: rgba(255,255,255,0.6);
+  border-radius: 0em 0em 1em 1em;
+  margin-top: 0em;
+  background: #fff;
 /* unvisited link */
 /* visited link */
 /* mouse over link */
@@ -3021,7 +3024,7 @@ a.btn {
 .sidebar-inner {
   border-radius: 1em;
   margin-top: 0.5em;
-  background: rgba(255,255,255,0.6);
+  background: #fff;
 }
 .sidebar {
   border-radius: 1em;
@@ -3029,15 +3032,15 @@ a.btn {
   background: rgba(255,255,255,0);
 }
 .post-block {
-  border-radius: 1em;
-  background: rgba(255,255,255,0.6);
+  border-radius: 0em 0em 1em 1em;
+  background: #fff;
 }
 #posts > article + article .post-block {
   border-radius: 1em;
 }
 .comments {
   border-radius: 1em;
-  background: rgba(255,255,255,0.6);
+  background: #fff;
 }
 a:link {
   text-decoration: none;
