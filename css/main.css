@@ -1746,7 +1746,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #cbfa4e;
+  background: #c1ff6b;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2971,13 +2971,14 @@ li {
   line-height: 1.5em;
 }
 blockquote {
-  border-left: 0.5em solid #3295a3;
+  border-left: 0.3em solid #ef3473;
   box-shadow: 0px 1px 2px -1px #999;
-  color: #666;
-  background-color: #e3f2f4;
+  color: #555;
+  background-color: #e5e7e9;
   margin: 0;
   padding: 0 15px;
   border-radius: 3px;
+  font-size: 1em;
 }
 blockquote cite::before {
   content: '-';
