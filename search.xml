@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[前端学习]]></title>
+    <url>%2F2019%2F11%2F29%2Fqianduan%2F</url>
+    <content type="text"><![CDATA[前端学习之路 一、 基础知识： 计算机核心理论： 数据结构/算法初步 计算机网络基础 数据库初步 前端三大件： HTML(5) CSS(3) JavaScript(ES6) 前端类库，工具等： jQuery Node（技术栈 + 工具栈） Sass/Less Bootstrap 现代框架： Angular React Vue 周边开发： Chrome Extension Electron/微信小程序 二、 书单： 计算机原理： 《编码》 《HTTP权威指南》 HTML &amp; CSS： 《Head First HTML &amp; CSS》 《CSS权威指南》 《The Book Of CSS3》 JS： 《Eloquent JavaScript》 《JS权威指南》 《JS Good Parts》 《High Performance JavaScript》 《Speaking JS》]]></content>
+      <categories>
+        <category>网站技术</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo d一台电脑deploy到两个不同的github帐号]]></title>
     <url>%2F2019%2F11%2F29%2F1pc2github%2F</url>
     <content type="text"><![CDATA[如何用一台电脑部署两个不同的github帐号 一、 git配置 进入 .ssh 目录：C:\Users\yourusername\ .ssh 右键 git bush here 新建密钥：新邮箱 1ssh-keygen -t rsa -C youremail 输入新密钥的名字回车、回车、回车：例如：newkey 1Enter file in which to save the key (/c/Users/you/.ssh/id_rsa):newkey 新建配置文件： 1touch config 用文本编辑器编辑文件 config：前缀随意（可以设置成你新github的用户名），记住就行；第二个配置，newkey是刚刚新建密钥的名字 12345678910# 第一个：Host github.comHostName github.comUser gitIdentityFile ~/.ssh/id_rsa# 第二个：Host 前缀.github.comHostName github.comUser gitIdentityFile ~/.ssh/newkey 添加新密钥：依次执行下列命令：-D是清除密钥，然后添加两密钥进去，默认的id_rsa是第一个帐号的密钥，newkey是刚才新建的密钥。 1234ssh-agent bashssh-add -Dssh-add id_rsassh-add newkey 二、 github配置： 打开文件夹，找到newkey.pub，复制内容 打开github &gt; Your repositories &gt; settings &gt; Deploy keys &gt; Add deploy key title随意，把密钥的粘贴进去 记得勾选：□ Allow write access 三、 配置第二个hexo的config文件：不知道前缀是什么的话，请看：一、6 这里要注意的是repo的格式，git@前缀.github.com:(注意冒号)github用户名/github用户名.github.io.git 1234deploy: type: git repository: git@前缀.github.com:github用户名/github用户名.github.io.git branch: master 四、 上传；若是不行，再操作一遍 进入新hexo根目录 右键 git bash here 执行下列代码：12hexo cleanheox g -d]]></content>
