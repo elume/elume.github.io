@@ -1746,7 +1746,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #b0ff61;
+  background: #fffff9;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -3067,6 +3067,11 @@ h4 {
   font-size: 1.2em;
 }
 h5 {
+  font-size: 1em;
+}
+a.post-title-link {
+  color: #09bace;
+  font-weight: bold;
   font-size: 1em;
 }
 .gutter {
