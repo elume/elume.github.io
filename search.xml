@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CSS]]></title>
+    <url>%2F2019%2F12%2F07%2F0009_css%2F</url>
+    <content type="text"><![CDATA[CSS 知识 一、 收藏1、 div标签a、 一个好看的阴影：123456div&#123; background-color: #fff; box-shadow: 0 1px 5px -2px #000; width: 500px; height: 306px; margin: auto;&#125;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[前端学习]]></title>
     <url>%2F2019%2F11%2F29%2F0008_qianduan%2F</url>
     <content type="text"><![CDATA[前端学习之路 一、 基础知识： 计算机核心理论： 数据结构/算法初步 计算机网络基础 数据库初步 前端三大件： HTML(5) CSS(3) JavaScript(ES6) 前端类库，工具等： jQuery Node（技术栈 + 工具栈） Sass/Less Bootstrap 现代框架： Angular React Vue 周边开发： Chrome Extension Electron/微信小程序 二、 书单： 计算机原理： 《编码》 《HTTP权威指南》 HTML &amp; CSS： 《Head First HTML &amp; CSS》 《CSS权威指南》 《The Book Of CSS3》 JS： 《Eloquent JavaScript》 《JS权威指南》 《JS Good Parts》 《High Performance JavaScript》 《Speaking JS》]]></content>
