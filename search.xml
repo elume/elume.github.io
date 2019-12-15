@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[全文搜索知识收藏]]></title>
+    <url>%2F2019%2F12%2F15%2F0010_fulltextsearch%2F</url>
+    <content type="text"><![CDATA[全文搜索知识收藏 Algolia Search: 用 Algolia DocSearch 轻松实现文档全站搜索]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>搜索技术</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CSS]]></title>
     <url>%2F2019%2F12%2F07%2F0009_css%2F</url>
     <content type="text"><![CDATA[CSS 知识 一、 收藏1、 div标签a、 一个好看的阴影：123456div&#123; background-color: #fff; box-shadow: 0 1px 5px -2px #000; width: 500px; height: 306px; margin: auto;&#125;]]></content>
