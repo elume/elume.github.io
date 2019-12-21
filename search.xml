@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[前端需要的技术概览]]></title>
+    <url>%2F2019%2F12%2F21%2F0011_frontend%2F</url>
+    <content type="text"><![CDATA[前端需要的技术概览]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[全文搜索知识收藏]]></title>
     <url>%2F2019%2F12%2F15%2F0010_fulltextsearch%2F</url>
     <content type="text"><![CDATA[全文搜索知识收藏 Algolia Search: 用 Algolia DocSearch 轻松实现文档全站搜索]]></content>
