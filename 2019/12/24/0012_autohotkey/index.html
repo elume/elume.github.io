@@ -57,19 +57,19 @@
   };
 </script>
 
-  <meta name="description" content="如何用一台电脑部署两个不同的github帐号">
-<meta name="keywords" content="Hexo">
+  <meta name="description" content="挂起/启动 所有命令123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++">
+<meta name="keywords" content="Autohotkey">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo d一台电脑deploy到两个不同的github帐号">
-<meta property="og:url" content="https://elume.github.io/2019/11/29/0007_1pc2github/index.html">
+<meta property="og:title" content="Autohotkey">
+<meta property="og:url" content="https://elume.github.io/2019/12/24/0012_autohotkey/index.html">
 <meta property="og:site_name" content="Elume&#39;s Blog">
-<meta property="og:description" content="如何用一台电脑部署两个不同的github帐号">
+<meta property="og:description" content="挂起/启动 所有命令123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-29T08:01:08.728Z">
+<meta property="og:updated_time" content="2019-12-24T08:32:02.525Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo d一台电脑deploy到两个不同的github帐号">
-<meta name="twitter:description" content="如何用一台电脑部署两个不同的github帐号">
-  <link rel="canonical" href="https://elume.github.io/2019/11/29/0007_1pc2github/">
+<meta name="twitter:title" content="Autohotkey">
+<meta name="twitter:description" content="挂起/启动 所有命令123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++">
+  <link rel="canonical" href="https://elume.github.io/2019/12/24/0012_autohotkey/">
 
 
 <script id="page.configurations">
@@ -78,7 +78,7 @@
   };
 </script>
 
-  <title>Hexo d一台电脑deploy到两个不同的github帐号 | Elume's Blog</title>
+  <title>Autohotkey | Elume's Blog</title>
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100451136-2"></script>
   <script>
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://elume.github.io/2019/11/29/0007_1pc2github/">
+    <link itemprop="mainEntityOfPage" href="https://elume.github.io/2019/12/24/0012_autohotkey/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Elume">
@@ -279,7 +279,7 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">Hexo d一台电脑deploy到两个不同的github帐号
+          <h1 class="post-title" itemprop="name headline">Autohotkey
 
               
             
@@ -299,7 +299,7 @@
                 
               
 
-              <time title="创建时间：2019-11-29 10:09:04 / 修改时间：13:01:08" itemprop="dateCreated datePublished" datetime="2019-11-29T10:09:04+05:00">2019-11-29</time>
+              <time title="创建时间：2019-12-24 13:31:25 / 修改时间：13:32:02" itemprop="dateCreated datePublished" datetime="2019-12-24T13:31:25+05:00">2019-12-24</time>
             </span>
           
             
@@ -314,7 +314,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/博客/" itemprop="url" rel="index"><span itemprop="name">博客</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/应用软件/" itemprop="url" rel="index"><span itemprop="name">应用软件</span></a></span>
 
                 
                 
@@ -339,7 +339,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">1.1k</span>
+              <span title="本文字数">1.8k</span>
             </span>
           
             <span class="post-meta-item">
@@ -349,7 +349,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">2 分钟</span>
+              <span title="阅读时长">3 分钟</span>
             </span>
           
 
@@ -362,47 +362,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>如何用一台电脑部署两个不同的github帐号</p>
-<a id="more"></a>
+        <a id="more"></a>
 
-<h3 id="一、-git配置"><a href="#一、-git配置" class="headerlink" title="一、 git配置"></a>一、 git配置</h3><ol>
-<li><p>进入 .ssh 目录：C:\Users\yourusername\ .ssh</p>
-</li>
-<li><p>右键 git bush here</p>
-</li>
-<li><p>新建密钥：新邮箱</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C youremail</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>输入新密钥的名字回车、回车、回车：例如：newkey</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Enter file in which to save the key (/c/Users/you/.ssh/id_rsa):newkey</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>新建配置文件：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch config</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>用文本编辑器编辑文件 config：前缀随意（可以设置成你新github的用户名），记住就行；第二个配置，newkey是刚刚新建密钥的名字</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 第一个：</span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">User git</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line"># 第二个：</span><br><span class="line">Host 前缀.github.com</span><br><span class="line">HostName github.com</span><br><span class="line">User git</span><br><span class="line">IdentityFile ~/.ssh/newkey</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加新密钥：依次执行下列命令：-D是清除密钥，然后添加两密钥进去，默认的id_rsa是第一个帐号的密钥，newkey是刚才新建的密钥。</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent bash</span><br><span class="line">ssh-add -D</span><br><span class="line">ssh-add id_rsa</span><br><span class="line">ssh-add newkey</span><br></pre></td></tr></table></figure>
+<h3 id="挂起-启动-所有命令"><a href="#挂起-启动-所有命令" class="headerlink" title="挂起/启动 所有命令"></a>挂起/启动 所有命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++Ctrl + Alt + 0 暂停所有脚本</span><br><span class="line">^!0:: Suspend</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++判断word是否在运行，true：激活窗口，false：打开word</span><br><span class="line">+Right:: ; 打开</span><br><span class="line">IfWinExist ahk_exe WINWORD.EXE</span><br><span class="line">   WinActivate</span><br><span class="line">else</span><br><span class="line">	run &quot;C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE&quot;</span><br><span class="line">return</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++打开文档</span><br><span class="line">+z:: ; 打开</span><br><span class="line">Run, D:\桌面\制作\0000.pdf</span><br><span class="line">Return</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++替换双空格为全角空格</span><br><span class="line">:*:  ::　</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++双击Esc打开Word文档</span><br><span class="line">; 判断400毫秒内某按键是否被双击，如果被双击执行指定动作</span><br><span class="line">~Esc::  </span><br><span class="line">if (A_PriorHotkey &lt;&gt; &quot;~Esc&quot; or A_TimeSincePriorHotkey &gt; 400)  </span><br><span class="line">&#123;  </span><br><span class="line">    ; Too much time between presses, so this isn&apos;t a double-press.  </span><br><span class="line">    KeyWait, Esc  </span><br><span class="line">    return  </span><br><span class="line">&#125;  </span><br><span class="line">Run, D:\桌面\制作\0000.docx</span><br><span class="line">return</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++各种粘贴功能</span><br><span class="line">1::</span><br><span class="line">Send, &#123;Ctrl down&#125;&#123;c&#125;&#123;Ctrl up&#125;</span><br><span class="line">IfWinExist ahk_exe WINWORD.EXE</span><br><span class="line">   WinActivate</span><br><span class="line">Send, &#123;Shift down&#125; &#123;9&#125;&#123;0&#125; &#123;Shift up&#125;&#123;Left&#125;&#123;Ctrl down&#125;&#123;v&#125;&#123;Ctrl up&#125;</span><br><span class="line">IfWinExist ahk_exe hh.exe</span><br><span class="line">   WinActivate</span><br><span class="line">Return</span><br><span class="line"></span><br><span class="line">2::</span><br><span class="line">Send, &#123;Ctrl down&#125;&#123;c&#125;&#123;Ctrl up&#125;</span><br><span class="line">IfWinExist ahk_exe WINWORD.EXE</span><br><span class="line">   WinActivate</span><br><span class="line">Send, &#123;,&#125;&#123;Ctrl down&#125;&#123;v&#125;&#123;Ctrl up&#125;</span><br><span class="line">Return</span><br><span class="line"></span><br><span class="line">3::</span><br><span class="line">Send, &#123;Ctrl down&#125;&#123;c&#125;&#123;Ctrl up&#125;</span><br><span class="line">IfWinExist ahk_exe WINWORD.EXE</span><br><span class="line">   WinActivate</span><br><span class="line">Send, &#123;Left&#125;&#123;Ctrl down&#125;&#123;v&#125;&#123;Ctrl up&#125;</span><br><span class="line">Return</span><br><span class="line"></span><br><span class="line">4::</span><br><span class="line">Send, &#123;Ctrl down&#125;&#123;c&#125;&#123;Ctrl up&#125;</span><br><span class="line">IfWinExist ahk_exe WINWORD.EXE</span><br><span class="line">   WinActivate</span><br><span class="line">Send, ^+v</span><br><span class="line">Return</span><br></pre></td></tr></table></figure>
 
-</li>
-</ol>
-<h3 id="二、-github配置："><a href="#二、-github配置：" class="headerlink" title="二、 github配置："></a>二、 github配置：</h3><ol>
-<li>打开文件夹，找到newkey.pub，复制内容</li>
-<li>打开github &gt; Your repositories &gt; settings &gt; Deploy keys &gt; Add deploy key</li>
-<li>title随意，把密钥的粘贴进去</li>
-<li>记得勾选：□ Allow write access</li>
-</ol>
-<h3 id="三、-配置第二个hexo的config文件：不知道前缀是什么的话，请看：一、6"><a href="#三、-配置第二个hexo的config文件：不知道前缀是什么的话，请看：一、6" class="headerlink" title="三、 配置第二个hexo的config文件：不知道前缀是什么的话，请看：一、6"></a>三、 配置第二个hexo的config文件：不知道前缀是什么的话，请看：一、6</h3><blockquote>
-<p>这里要注意的是repo的格式，git@前缀.github.com:(注意冒号)github用户名/github用户名.github.io.git</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@前缀.github.com:github用户名/github用户名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<h3 id="四、-上传；若是不行，再操作一遍"><a href="#四、-上传；若是不行，再操作一遍" class="headerlink" title="四、 上传；若是不行，再操作一遍"></a>四、 上传；若是不行，再操作一遍</h3><ol>
-<li>进入新hexo根目录</li>
-<li>右键 git bash here</li>
-<li>执行下列代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">heox g -d</span><br></pre></td></tr></table></figure></li>
-</ol>
 
     </div>
 
@@ -472,13 +435,13 @@
           
         
         <div class="post-tags">
-            <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+            <a href="/tags/Autohotkey/" rel="tag"><i class="fa fa-tag"></i> Autohotkey</a>
           
         </div>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-              <a href="/2019/11/14/0006_idnamecard/" rel="next" title="InDesign从excel导入数据，一秒钟生成多张名片（一万张名牌都可以），超省时间！">
-                <i class="fa fa-chevron-left"></i> InDesign从excel导入数据，一秒钟生成多张名片（一万张名牌都可以），超省时间！
+              <a href="/2019/12/21/0011_frontend/" rel="next" title="前端需要的技术概览">
+                <i class="fa fa-chevron-left"></i> 前端需要的技术概览
               </a>
             
           </div>
@@ -486,10 +449,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-              <a href="/2019/11/29/0008_qianduan/" rel="prev" title="前端学习">
-                前端学习 <i class="fa fa-chevron-right"></i>
-              </a>
-            
           </div>
         </div>
     </footer>
@@ -652,7 +611,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、-git配置"><span class="nav-text">一、 git配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、-github配置："><span class="nav-text">二、 github配置：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、-配置第二个hexo的config文件：不知道前缀是什么的话，请看：一、6"><span class="nav-text">三、 配置第二个hexo的config文件：不知道前缀是什么的话，请看：一、6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、-上传；若是不行，再操作一遍"><span class="nav-text">四、 上传；若是不行，再操作一遍</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#挂起-启动-所有命令"><span class="nav-text">挂起/启动 所有命令</span></a></li></ol></div>
             
 
           </div>
