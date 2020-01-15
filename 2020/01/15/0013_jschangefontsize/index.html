@@ -65,7 +65,7 @@
 <meta property="og:site_name" content="Elume&#39;s Blog">
 <meta property="og:description" content="JS控制字体大小和页面跳转演示">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-15T10:28:54.490Z">
+<meta property="og:updated_time" content="2020-01-15T10:32:39.899Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS控制字体大小和页面跳转演示">
 <meta name="twitter:description" content="JS控制字体大小和页面跳转演示">
@@ -299,7 +299,7 @@
                 
               
 
-              <time title="创建时间：2020-01-15 15:25:24 / 修改时间：15:28:54" itemprop="dateCreated datePublished" datetime="2020-01-15T15:25:24+05:00">2020-01-15</time>
+              <time title="创建时间：2020-01-15 15:25:24 / 修改时间：15:32:39" itemprop="dateCreated datePublished" datetime="2020-01-15T15:25:24+05:00">2020-01-15</time>
             </span>
           
             
@@ -339,7 +339,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">2.5k</span>
+              <span title="本文字数">4.1k</span>
             </span>
           
             <span class="post-meta-item">
@@ -349,7 +349,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">4 分钟</span>
+              <span title="阅读时长">7 分钟</span>
             </span>
           
 
@@ -366,6 +366,75 @@
 <a id="more"></a>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">        &lt;title&gt;字体大小控制&lt;/title&gt;</span><br><span class="line">        &lt;style&gt;</span><br><span class="line">            .button &#123;</span><br><span class="line">                background-color: #4CAF50;</span><br><span class="line">                border: none;</span><br><span class="line">                color: white;</span><br><span class="line">                padding: 15px 32px;</span><br><span class="line">                text-align: center;</span><br><span class="line">                font-size: 1.4em;</span><br><span class="line">                margin: 4px 2px;</span><br><span class="line">                border-radius: 8px;</span><br><span class="line">            &#125;</span><br><span class="line">            .button1 &#123;</span><br><span class="line">                background-color: #00bace;</span><br><span class="line">                border: none;</span><br><span class="line">                color: white;</span><br><span class="line">                padding: 15px 32px;</span><br><span class="line">                text-align: center;</span><br><span class="line">                font-size: 1em;</span><br><span class="line">                margin: 4px 2px;</span><br><span class="line">                border-radius: 8px;</span><br><span class="line">            &#125;</span><br><span class="line">            h2 &#123;</span><br><span class="line">                text-align: center;</span><br><span class="line">                padding-top: 2em;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            function ChangefontSize(z) &#123;</span><br><span class="line">                var x = document.getElementById(&quot;demo&quot;);</span><br><span class="line">                var y = window</span><br><span class="line">                    .getComputedStyle(x)</span><br><span class="line">                    .fontSize;</span><br><span class="line">                var fn = y[0];</span><br><span class="line">                var sn = y[1];</span><br><span class="line">                var fsn = fn + sn;</span><br><span class="line">                fsn = Number(fsn);</span><br><span class="line">                if (z == 1) &#123;</span><br><span class="line">                    fsn = fsn - 3;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    fsn = fsn + 3;</span><br><span class="line">                &#125;</span><br><span class="line">                fsn = String(fsn) + &apos;px&apos;;</span><br><span class="line">                x.style.fontSize = fsn;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line"></span><br><span class="line">        &lt;h2&gt;JS控制字体大小和页面跳转演示&lt;/h2&gt;</span><br><span class="line">        &lt;button class=&quot;button&quot; onclick=&quot;ChangefontSize(0)&quot;&gt;A+&lt;/button&gt;</span><br><span class="line">        &lt;button class=&quot;button&quot; onclick=&quot;ChangefontSize(1)&quot;&gt;A-&lt;/button&gt;</span><br><span class="line">        &lt;div id=&quot;demo&quot;&gt;</span><br><span class="line">            &lt;p&gt;</span><br><span class="line">                第一段： JS控制字体大小和页面跳转演示</span><br><span class="line">            &lt;/p&gt;</span><br><span class="line">            &lt;p&gt;</span><br><span class="line">                第二段： JS控制字体大小和页面跳转演示</span><br><span class="line">            &lt;/p&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;hr&gt;</span><br><span class="line">        &lt;button</span><br><span class="line">            class=&quot;button1&quot;</span><br><span class="line">            onclick=&quot;javascript:window.location.href=&apos;https://google.com&apos;&quot;&gt;跳转谷歌&lt;/button&gt;</span><br><span class="line">        &lt;button</span><br><span class="line">            class=&quot;button1&quot;</span><br><span class="line">            onclick=&quot;javascript:window.location.href=&apos;https://baidu.com&apos;&quot;&gt;跳转百度&lt;/button&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<!DOCTYPE html>
+<html>
+    <head><meta name="generator" content="Hexo 3.9.0">
+        <meta charset="utf-8">
+        <title>字体大小控制</title>
+        <style>
+            .button {
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                font-size: 1.4em;
+                margin: 4px 2px;
+                border-radius: 8px;
+            }
+            .button1 {
+                background-color: #00bace;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                font-size: 1em;
+                margin: 4px 2px;
+                border-radius: 8px;
+            }
+            h2 {
+                text-align: center;
+                padding-top: 2em;
+            }
+        </style>
+        <script>
+            function ChangefontSize(z) {
+                var x = document.getElementById("demo");
+                var y = window
+                    .getComputedStyle(x)
+                    .fontSize;
+                var fn = y[0];
+                var sn = y[1];
+                var fsn = fn + sn;
+                fsn = Number(fsn);
+                if (z == 1) {
+                    fsn = fsn - 3;
+                } else {
+                    fsn = fsn + 3;
+                }
+                fsn = String(fsn) + 'px';
+                x.style.fontSize = fsn;
+            }
+        </script>
+    </head>
+    <body>
+        <h2>JS控制字体大小和页面跳转演示</h2>
+        <button class="button" onclick="ChangefontSize(0)">A+</button>
+        <button class="button" onclick="ChangefontSize(1)">A-</button>
+        <div id="demo">
+            <p>
+                第一段： JS控制字体大小和页面跳转演示
+            </p>
+            <p>
+                第二段： JS控制字体大小和页面跳转演示
+            </p>
+        </div>
+        <hr>
+        <button class="button1" onclick="javascript:window.location.href='https://google.com'">跳转谷歌</button>
+        <button class="button1" onclick="javascript:window.location.href='https://baidu.com'">跳转百度</button>
+    </body>
+</html>
     </div>
 
 
@@ -480,8 +549,17 @@
 
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -593,6 +671,23 @@
 
         </div>
       </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-text">JS控制字体大小和页面跳转演示</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
     </div>
   </aside>
@@ -615,14 +710,14 @@
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">12k</span>
+    <span title="站点总字数">13k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">21 分钟</span>
+    <span title="站点阅读时长">24 分钟</span>
 </div>
 
         
