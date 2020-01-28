@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    copycode: {"enable":true,"show_result":true,"style":"elume"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    search: {
+      root: '/',
+      path: 'search.xml'
+    },
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="改进网站站内搜索-百度,Google自定义搜索和Elasticsearch自建搜索">
+<meta name="keywords" content="Hexo,NexT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="改进网站站内搜索-百度,Google自定义搜索和Elasticsearch自建搜索">
+<meta property="og:url" content="https://elume.github.io/2020/01/22/0014_search/index.html">
+<meta property="og:site_name" content="Elume&#39;s Blog">
+<meta property="og:description" content="改进网站站内搜索-百度,Google自定义搜索和Elasticsearch自建搜索">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_00.jpg">
+<meta property="og:image" content="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_0.jpg">
+<meta property="og:image" content="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_01.gif">
+<meta property="og:image" content="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_03.gif">
+<meta property="og:image" content="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_04.gif">
+<meta property="og:image" content="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_05_1.gif">
+<meta property="og:image" content="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/bmon12.gif">
+<meta property="og:image" content="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_01.jpg">
+<meta property="og:image" content="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_07.gif">
+<meta property="og:image" content="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_08.gif">
+<meta property="og:image" content="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_09.gif">
+<meta property="og:image" content="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_10.gif">
+<meta property="og:image" content="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_11.gif">
+<meta property="og:image" content="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_12.gif">
+<meta property="og:image" content="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_13.gif">
+<meta property="og:image" content="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_14.gif">
+<meta property="og:image" content="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_15.gif">
+<meta property="og:image" content="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_16.gif">
+<meta property="og:updated_time" content="2020-01-22T06:58:56.738Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="改进网站站内搜索-百度,Google自定义搜索和Elasticsearch自建搜索">
+<meta name="twitter:description" content="改进网站站内搜索-百度,Google自定义搜索和Elasticsearch自建搜索">
+<meta name="twitter:image" content="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_00.jpg">
+  <link rel="canonical" href="https://elume.github.io/2020/01/22/0014_search/">
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>改进网站站内搜索-百度,Google自定义搜索和Elasticsearch自建搜索 | Elume's Blog</title>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100451136-2"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-100451136-2');
+    }
+  </script>
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Elume's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Accumulate and Shining</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-search">
+          <a href="javascript:;" class="popup-trigger">
+          
+            <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+    </div>
+</nav>
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://elume.github.io/2020/01/22/0014_search/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Elume">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Elume's Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">改进网站站内搜索-百度,Google自定义搜索和Elasticsearch自建搜索
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-01-22 11:45:46 / 修改时间：11:58:56" itemprop="dateCreated datePublished" datetime="2020-01-22T11:45:46+05:00">2020-01-22</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/博客/" itemprop="url" rel="index"><span itemprop="name">博客</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon"
+              >
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          <br>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span title="本文字数">6.2k</span>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span title="阅读时长">11 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>改进网站站内搜索-百度,Google自定义搜索和Elasticsearch自建搜索</p>
+<a id="more"></a>
+
+
+<div class="the-content">
+<link rel="stylesheet" id="wp-connect-css-share-css" href="https://wzfou.cdn.bcebos.com/wp-content/plugins/wp-connect/css/share.css" type="text/css" media="all">
+<div id="ftwp-container-outer" class="ftwp-in-post ftwp-float-right"><div id="ftwp-container" class="ftwp-wrap ftwp-hidden-state ftwp-maximize ftwp-bottom-right"><button type="button" id="ftwp-trigger" class="ftwp-shape-round ftwp-border-none" title="click To Maximize The Table Of Contents"><span class="ftwp-trigger-icon ftwp-icon-bullet"></span></button><nav id="ftwp-contents" class="ftwp-shape-round ftwp-border-none"><header id="ftwp-header"><span id="ftwp-header-control" class="ftwp-icon-bullet"></span><button type="button" id="ftwp-header-minimize"></button><h4 id="ftwp-header-title">文章目录</h4></header><ol id="ftwp-list" class="ftwp-liststyle-decimal ftwp-effect-bounce-to-right ftwp-list-nest"><li class="ftwp-item ftwp-has-sub"><a class="ftwp-anchor" href="#ftoc-heading-1"><span class="ftwp-text">一、百度站内搜索引擎</span></a><ol class="ftwp-sub"><li class="ftwp-item"><a class="ftwp-anchor" href="#ftoc-heading-2"><span class="ftwp-text">1.1  百度站内搜索引擎使用</span></a></li><li class="ftwp-item"><a class="ftwp-anchor" href="#ftoc-heading-3"><span class="ftwp-text">1.2  百度站内搜索引擎不支持Https</span></a></li></ol></li><li class="ftwp-item ftwp-has-sub"><a class="ftwp-anchor" href="#ftoc-heading-4"><span class="ftwp-text">二、Google自定义搜索</span></a><ol class="ftwp-sub"><li class="ftwp-item"><a class="ftwp-anchor" href="#ftoc-heading-5"><span class="ftwp-text">2.1  Google自定义搜索使用</span></a></li><li class="ftwp-item"><a class="ftwp-anchor" href="#ftoc-heading-6"><span class="ftwp-text">2.2  Google自定义搜索不显示问题</span></a></li></ol></li><li class="ftwp-item ftwp-has-sub"><a class="ftwp-anchor" href="#ftoc-heading-7"><span class="ftwp-text">三、Elasticsearch自建搜索</span></a><ol class="ftwp-sub"><li class="ftwp-item"><a class="ftwp-anchor" href="#ftoc-heading-8"><span class="ftwp-text">3.1  安装Elasticsearch</span></a></li><li class="ftwp-item"><a class="ftwp-anchor" href="#ftoc-heading-9"><span class="ftwp-text">3.2  安装 IK Analysis</span></a></li><li class="ftwp-item"><a class="ftwp-anchor" href="#ftoc-heading-10"><span class="ftwp-text">3.3  配置同义词</span></a></li><li class="ftwp-item"><a class="ftwp-anchor" href="#ftoc-heading-11"><span class="ftwp-text">3.4  Elasticsearch整合Wordpress</span></a></li></ol></li><li class="ftwp-item"><a class="ftwp-anchor" href="#ftoc-heading-12"><span class="ftwp-text">四、总结</span></a></li></ol></nav></div></div>
+<div id="ftwp-postcontent"><p>WordPress自带的搜索虽然说可以搜出一些东西出来，但是有时搜索的结果不一定满意，而且没有联词搜索和模糊搜索，导致有时候必须指定准确的关键字才能搜索出结果来。况且Wordpress自带的搜索对MysqL数据库查询依赖大，数据库大的话比较消耗时间。</p>
+<p>替换Wordpress默认的搜索也不是什么难事，懂行的人基本上都知道site:wzfou.com xxx就可以搜索出指定网站的站内内容，而百度、Google都推出了自定义搜索，就是把site:wzfou.com xxx直接嵌入到站内，用户点击搜索后不用跳转到百度\Google就可以看到结果。</p>
+<p>不过百度,Google自定义搜索依赖于搜索引擎的索引，这对于索引少或者是新站来说，有时新的文章搜索不出来，影响了用户体验。于是，Elasticsearch这种开源免费的自建搜索引擎诞生了，这是一个分布式、可扩展、实时的搜索与数据分析引擎，可以处理全文搜索和结构化数据的实时统计。</p>
+<p><a href="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_00.jpg" rel="noopener" target="_blank"><img class="alignnone size-full wp-image-8027" src="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_00.jpg" alt="改进我们的站内搜索-百度,Google自定义搜索和Elasticsearch自建搜索" width="680" height="366" srcset="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_00.jpg 680w, https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_00-300x161.jpg 300w, https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_00-600x323.jpg 600w, https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_00-223x120.jpg 223w, https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_00-372x200.jpg 372w" sizes="(max-width: 680px) 100vw, 680px" data-pagespeed-url-hash="3140983293" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-pagespeed-lsc-url="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_00.jpg"></a></p>
+<p>本篇文章就来分享一下百度,Google自定义搜索和Elasticsearch自建搜索整合Wordpress的方法，更多的关于<a href="https://wzfou.com/wordpress-jianzhan/" target="_blank" rel="noopener noreferrer">WordPress建站</a>及WP优化的文章还有：</p>
+<ol>
+<li><a href="https://wzfou.com/php-fpm/" target="_blank" rel="noopener noreferrer">Linux的php-fpm优化心得-php-fpm进程占用内存大和不释放内存问题</a></li>
+<li><a href="https://wzfou.com/dashang-anniu/" target="_blank" rel="noopener noreferrer">WordPress添加支付宝,微信打赏按钮制作实例和Paypal.me打赏链接</a></li>
+<li><a href="https://wzfou.com/rss-readers/" target="_blank" rel="noopener noreferrer">五款优秀的RSS阅读器推荐-附国内外各大RSS阅读器收集整理汇总</a></li>
+</ol>
+<blockquote><p><strong>PS：2019年9月1日更新，</strong>不想折腾百度和谷歌自定义搜索的朋友，可以试试这个优秀的第三方站内搜索引擎：<a href="https://wzfou.com/algolia/" target="_blank" rel="noopener noreferrer">用Algolia给WordPress添加实时站内搜索功能-搜索质量更高内容更准</a>。</p>
+<p><strong>PS：2019年12月2日更新，</strong>想要构建更为强大的更为快速的免费站内搜索，你还可以试试 <span class="breadcrumb_last" aria-current="page">RediSearch高性能全文搜索引擎：<a href="https://wzfou.com/redisearch/" target="_blank" rel="noopener noreferrer">RediSearch高性能全文搜索引擎-整合WordPress打造高质量搜索</a>。</span></p></blockquote>
+<h2 id="ftoc-heading-1" class="ftwp-heading">一、百度站内搜索引擎</h2>
+<p>网站：</p>
+<ol>
+<li>https://ziyuan.baidu.com/cse/wiki/introduce</li>
+</ol>
+<p><a href="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_0.jpg" rel="noopener" target="_blank"><img class="alignnone size-full wp-image-8028" src="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_0.jpg" alt="百度站内搜索引擎" width="680" height="366" srcset="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_0.jpg 680w, https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_0-300x161.jpg 300w, https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_0-600x323.jpg 600w, https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_0-223x120.jpg 223w, https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_0-372x200.jpg 372w" sizes="(max-width: 680px) 100vw, 680px" data-pagespeed-url-hash="1528667681" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-pagespeed-lsc-url="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_0.jpg"></a></p>
+<h3 id="ftoc-heading-2" class="ftwp-heading">1.1  百度站内搜索引擎使用</h3>
+<p>首先是到<a href="https://wzfou.com/tag/baidu-zhannei/" target="_blank" rel="noopener noreferrer">百度站内搜索引擎</a>添加想要使用的网站域名。</p>
+<p><a href="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_01.gif" rel="noopener" target="_blank"><img class="alignnone size-full wp-image-8029" src="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_01.gif" alt="百度站内搜索引擎添加域名" width="680" height="366" data-pagespeed-url-hash="3435430813" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-pagespeed-lsc-url="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_01.gif"></a></p>
+<p>然后是选择百度站内搜索引擎样式，有嵌入式、悬浮式、侧边式以及与原站的搜索框整合型，请根据你自己的需要来选择。（点击放大）</p>
+<p><a href="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_03.gif" rel="noopener" target="_blank"><img class="alignnone size-full wp-image-8032" src="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_03.gif" alt="百度站内搜索引擎自定义样式" width="1045" height="720" data-pagespeed-url-hash="4024430655" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-pagespeed-lsc-url="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_03.gif"></a></p>
+<p><a href="https://wzfou.com/tag/baidu-custom/" target="_blank" rel="noopener noreferrer">百度自定义搜索</a>引擎还有一些高级可供我们优化站内搜索结果，例如可以设置关键词，搜索提示以及内文提词等等。</p>
+<p><a href="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_04.gif" rel="noopener" target="_blank"><img class="alignnone size-full wp-image-8033" src="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_04.gif" alt="百度站内搜索引擎优化结果" width="680" height="366" data-pagespeed-url-hash="23963280" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-pagespeed-lsc-url="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_04.gif"></a></p>
+<p>百度站内搜索引擎还允许你自定义二级域名，同时还可以添加Logo等信息。</p>
+<p><a href="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_05_1.gif" rel="noopener" target="_blank"><img class="alignnone size-full wp-image-8035" src="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_05_1.gif" alt="百度站内搜索引擎自定义样式设置Logo" width="680" height="366" data-pagespeed-url-hash="3702241607" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-pagespeed-lsc-url="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_05_1.gif"></a></p>
+<h3 id="ftoc-heading-3" class="ftwp-heading">1.2  百度站内搜索引擎不支持Https</h3>
+<p><strong>非常可惜，百度站内搜索引擎至今不支持Https。</strong>虽然说百度搜索宣称Https有利于安全，但是自己的产品也不怎么热心于Https，而且看一下百度站内搜索引擎的官网，基本上有快两年没有更新了，大家要做好百度关闭该产品的准备。</p>
+<p><a href="https://wzfou.com/wp-content/uploads/2018/07/bmon12.gif" rel="noopener" target="_blank"><img class="alignnone size-full wp-image-8026" src="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/bmon12.gif" alt="百度站内搜索引擎至今不支持Https" width="680" height="366" data-pagespeed-url-hash="1503875256" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-pagespeed-lsc-url="https://wzfou.com/wp-content/uploads/2018/07/bmon12.gif"></a></p>
+<p>如果是Https站点的话，要么使用Nginx的反代（见：<a href="https://wzfou.com/nginx-cdn/" target="_blank" rel="noopener noreferrer">Nginx反向绑定</a>），要么就不要使用嵌入式，改用托管式的，即点击搜索按钮后跳转到百度自定义搜索网站。代码改进如下（请将s=xxx换成你自己的）：</p>
+<pre data-enlighter-language="html">&lt;input type="text" name="q" id="bdcsMain" value="搜索全站内容" onfocus="if (value =='搜索全站内容'){value =''}" onblur="if (value ==''){value='搜索全站内容'}" &gt;
+&lt;button class="search-submit" id="btnPost" type="submit" onclick="window.open('http://zhannei.baidu.com/cse/search?s=14135322191061470907&amp;entry=1&amp;q='+document.getElementById('bdcsMain').value)"&gt;搜索&lt;/button&gt;</pre>
+<p>嵌入效果如下：</p>
+<p><input id="bdcsMain" name="q" type="text" value="搜索全站内容" data-com><br>
+<button id="btnPost" class="search-submit" type="submit">搜索</button></p>
+<h2 id="ftoc-heading-4" class="ftwp-heading">二、Google自定义搜索</h2>
+<p>网站：</p>
+<ol>
+<li>https://cse.google.com/</li>
+</ol>
+<p><a href="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_01.jpg" rel="noopener" target="_blank"><img class="alignnone size-full wp-image-8030" src="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_01.jpg" alt="Google自定义搜索" width="680" height="366" srcset="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_01.jpg 680w, https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_01-300x161.jpg 300w, https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_01-600x323.jpg 600w, https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_01-223x120.jpg 223w, https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_01-372x200.jpg 372w" sizes="(max-width: 680px) 100vw, 680px" data-pagespeed-url-hash="3435483214" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-pagespeed-lsc-url="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_01.jpg"></a></p>
+<h3 id="ftoc-heading-5" class="ftwp-heading">2.1  Google自定义搜索使用</h3>
+<p>首先登录到<a href="https://wzfou.com/tag/google-custom/" target="_blank" rel="noopener noreferrer">Google自定义搜索</a>官网页面，然后点击新建一个自定义搜索。</p>
+<p><a href="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_07.gif" rel="noopener" target="_blank"><img class="alignnone size-full wp-image-8036" src="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_07.gif" alt="Google自定义搜索自定义搜索" width="680" height="366" data-pagespeed-url-hash="907463043" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-pagespeed-lsc-url="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_07.gif"></a></p>
+<p>接着就是设置你要索引的网址，命名一个名称等。（点击放大）</p>
+<p><a href="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_08.gif" rel="noopener" target="_blank"><img class="alignnone size-full wp-image-8037" src="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_08.gif" alt="Google自定义搜索索引网址" width="930" height="700" data-pagespeed-url-hash="1201962964" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-pagespeed-lsc-url="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_08.gif"></a></p>
+<p>创建完成后，你就可以点击获取代码了。</p>
+<p><a href="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_09.gif" rel="noopener" target="_blank"><img class="alignnone size-full wp-image-8038" src="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_09.gif" alt="Google自定义搜索获取代码" width="680" height="366" data-pagespeed-url-hash="1496462885" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-pagespeed-lsc-url="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_09.gif"></a></p>
+<p><a href="https://wzfou.com/tag/google-zhannei/" target="_blank" rel="noopener noreferrer">Google站内搜索</a>同样提供了外观设置、搜索结果优化等功能，你可以根据自己的需要来调整。（点击放大）</p>
+<p><a href="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_10.gif" rel="noopener" target="_blank"><img class="alignnone size-full wp-image-8039" src="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_10.gif" alt="Google自定义搜索结果优化" width="680" height="366" data-pagespeed-url-hash="3065714879" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-pagespeed-lsc-url="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_10.gif"></a></p>
+<p>Google自定义搜索允许你置顶某一个搜索结果、自动填充、同义词等等。</p>
+<p><a href="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_11.gif" rel="noopener" target="_blank"><img class="alignnone size-full wp-image-8040" src="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_11.gif" alt="Google自定义搜索置顶结果" width="680" height="366" data-pagespeed-url-hash="3360214800" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-pagespeed-lsc-url="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_11.gif"></a></p>
+<p>这是Google自定义搜索搜索效果，嵌入到网页可能还会受到原CSS的影响，需要自己再一步微调。（点击放大）</p>
+<p><a href="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_12.gif" rel="noopener" target="_blank"><img class="alignnone size-full wp-image-8041" src="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_12.gif" alt="Google自定义搜索嵌入效果" width="1082" height="711" data-pagespeed-url-hash="3654714721" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-pagespeed-lsc-url="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_12.gif"></a></p>
+<p>Google自定义搜索还可以搜索图片，实在很强大。</p>
+<p><a href="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_13.gif" rel="noopener" target="_blank"><img class="alignnone size-full wp-image-8042" src="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_13.gif" alt="Google自定义搜索搜索图片" width="680" height="366" data-pagespeed-url-hash="3949214642" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-pagespeed-lsc-url="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_13.gif"></a></p>
+<h3 id="ftoc-heading-6" class="ftwp-heading">2.2  Google自定义搜索不显示问题</h3>
+<p>由于众所周知的原因，Google自定义搜索在国内是无法正常显示，那么如何解决此问题呢？一个可行的方法就是用反代（见：<a href="https://wzfou.com/nginx-cdn/" target="_blank" rel="noopener noreferrer">Nginx反向绑定</a>），或者将Google自定义搜索相关文件本地化。实现难度比较大……</p>
+<p><a href="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_14.gif" rel="noopener" target="_blank"><img class="alignnone size-full wp-image-8043" src="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_14.gif" alt="Google自定义搜索不显示问题" width="680" height="366" data-pagespeed-url-hash="4243714563" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-pagespeed-lsc-url="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_14.gif"></a></p>
+<p>Google自定义搜索其实也是可以托管的，效果如下：</p>
+<ol>
+<li>https://cse.google.com/cse/publicurl?cx=011545314673148308753:3gbnph6-kfc</li>
+</ol>
+<h2 id="ftoc-heading-7" class="ftwp-heading">三、Elasticsearch自建搜索</h2>
+<p>网站：</p>
+<ol>
+<li>https://www.elastic.co</li>
+</ol>
+<h3 id="ftoc-heading-8" class="ftwp-heading">3.1  安装Elasticsearch</h3>
+<p><a href="https://wzfou.com/tag/elasticsearch/" target="_blank" rel="noopener noreferrer">Elasticsearch</a>安装基本上可以参考官方的教程了，这里直接引用<a href="https://imququ.com/post/elasticsearch.html" target="_blank" rel="noopener noreferrer">imququ.com</a>的安装方法：</p>
+<p>虚拟机和线上环境都是 Ubuntu 14.04.4 LTS，Elasticsearch 用的是最新版。一切开始之前，先要检查机器上是否装有 java 环境，如果没有可以通过以下命令安装：</p>
+<pre data-enlighter-language="shell">sudo apt-get install openjdk-7-jre-headless</pre>
+<p>下载 Elasticsearch 2.3.0 压缩包并解压：</p>
+<pre data-enlighter-language="shell">wget -c https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/zip/elasticsearch/2.3.0/elasticsearch-2.3.0.zip
+unzip elasticsearch-2.3.0.zip</pre>
+<p>将解压得到的 <code>elasticsearch-2.3.0</code> 目录重命名为 <code>~/es_root</code>（名称及位置没有限制，可以将它挪到你认为合适的任何位置）。Elasticsearch 无需安装，直接可以运行（注意：不能用 root 帐号运行）：</p>
+<pre data-enlighter-language="shell">BASHcd ~/es_root/bin/
+chmod a+x elasticsearch
+./elasticsearch</pre>
+<p>如果屏幕上没有打印错误信息，说明 Elasticsearch 服务已经成功启动。新建一个终端，用 curl 验证下：</p>
+<pre data-enlighter-language="shell">BASHcurl -XGET http://127.0.0.1:9200/?pretty
+
+<p>{<br>  “name” : “Melissa Gold”,<br>  “cluster_name” : “elasticsearch”,<br>  “version” : {<br>    “number” : “2.3.0”,<br>    “build_hash” : “8371be8d5fe5df7fb9c0516c474d77b9feddd888”,<br>    “build_timestamp” : “2016-03-29T07:54:48Z”,<br>    “build_snapshot” : false,<br>    “lucene_version” : “5.5.0”<br>  },<br>  “tagline” : “You Know, for Search”<br>}</p></pre><p></p>
+<p>如果看到以上信息，说明一切正常，否则请根据屏幕上的错误信息查找原因。尽管 Elasticsearch 本身是用 java 写的，但它对外可以通过 RESTful 接口交互，十分方便。</p>
+<p>默认情况下 Elasticsearch 的 RESTful 服务只有本机才能访问，也就是说无法从主机访问虚拟机中的服务。为了方便调试，可以修改 <code>~/es_root/config/elasticsearch.yml</code> 文件，加入以下两行：</p>
+<pre data-enlighter-language="shell">network.bind_host: "0.0.0.0"
+network.publish_host: _non_loopback:ipv4_</pre>
+<p><strong>但线上环境千万不要这样配置</strong>，否则任何人都可以通过这个接口修改你的数据。</p>
+<h3 id="ftoc-heading-9" class="ftwp-heading">3.2  安装 IK Analysis</h3>
+<p><a href="https://wzfou.com/tag/elasticsearch-sou/" target="_blank" rel="noopener noreferrer">Elasticsearch搜索</a>自带的分词器会粗暴地把每个汉字直接分开，没有根据词库来分词。为了处理中文搜索，还需要安装中文分词插件。我使用的是 <a href="https://github.com/medcl/elasticsearch-analysis-ik/" target="_blank" rel="noopener noreferrer">elasticsearch-analysis-ik</a>，支持自定义词库。</p>
+<p>首先，下载与 Elasticsearch 匹配的 elasticsearch-analysis-ik 插件：</p>
+<pre data-enlighter-language="shell">wget -c https://github.com/medcl/elasticsearch-analysis-ik/archive/v1.9.0.zip
+unzip v1.9.0.zip</pre>
+<p>解压后，进入插件源码目录编译：</p>
+<pre data-enlighter-language="shell">BASHsudo apt-get install maven
+cd elasticsearch-analysis-ik-1.9.0
+mvn package</pre>
+<p>如果一切顺利，在 <code>target/releases/</code> 目录下可以找到编好的文件。将其解压并拷到 <code>~/es_root</code> 对应目录：</p>
+<pre data-enlighter-language="shell">mkdir -p ~/es_root/plugins/ik/
+unzip target/releases/elasticsearch-analysis-ik-1.9.0.zip -d ~/es_root/plugins/ik/</pre>
+<p>elasticsearch-analysis-ik 的配置文件在 <code>~/es_root/plugins/ik/config/ik/</code> 目录，很多都是词表，直接用文本编辑器打开就可以修改，改完记得保存为 utf-8 格式。</p>
+<p>现在再启动 Elasticsearch 服务，如果看到类似下面这样的信息，说明 IK Analysis 插件已经装好了：</p>
+<pre data-enlighter-language="shell">plugins [analysis-ik]</pre>
+<h3 id="ftoc-heading-10" class="ftwp-heading">3.3  配置同义词</h3>
+<p>Elasticsearch 自带一个名为 synonym 的同义词 filter。为了能让 IK 和 synonym 同时工作，我们需要定义新的 analyzer，用 IK 做 tokenizer，synonym 做 filter。听上去很复杂，实际上要做的只是加一段配置。</p>
+<p>打开 <code>~/es_root/config/elasticsearch.yml</code> 文件，加入以下配置：</p>
+<pre data-enlighter-language="shell">YAMLindex:
+  analysis:
+    analyzer:
+      ik_syno:
+          type: custom
+          tokenizer: ik_max_word
+          filter: [my_synonym_filter]
+      ik_syno_smart:
+          type: custom
+          tokenizer: ik_smart
+          filter: [my_synonym_filter]
+    filter:
+      my_synonym_filter:
+          type: synonym
+          synonyms_path: analysis/synonym.txt</pre>
+<p>以上配置定义了 ik_syno 和 ik_syno_smart 这两个新的 analyzer，分别对应 IK 的 ik_max_word 和 ik_smart 两种分词策略。根据 IK 的文档，二者区别如下：</p>
+<ul>
+<li>ik_max_word：会将文本做最细粒度的拆分，会穷尽各种可能的组合；</li>
+<li>ik_smart：会将文本做最粗粒度的拆分；</li>
+</ul>
+<p>ik_syno 和 ik_syno_smart 都会使用 synonym filter 实现同义词转换。为了方便后续测试，建议创建 <code>~/es_root/config/analysis/synonym.txt</code> 文件，输入一些同义词并存为 utf-8 格式。例如：</p>
+<pre data-enlighter-language="shell">ua,user-agent,userAgent
+js,javascript
+谷歌=&gt;google</pre>
+<h3 id="ftoc-heading-11" class="ftwp-heading">3.4  Elasticsearch整合Wordpress</h3>
+<p>WordPress插件：</p>
+<blockquote><p>1、ElasticPress：https://wordpress.org/plugins/elasticpress/</p>
+<p>2、WP Search with Elasticsearch：https://wordpress.org/plugins/db-search-with-elasticsearch/</p></blockquote>
+<p>这两款<a href="https://wzfou.com/tag/elasticsearch-wordpress/" target="_blank" rel="noopener noreferrer">Elasticsearch WordPress</a> 插件，都是可以帮助我们将Elasticsearch搜索整合到Wordpress，首先是激活插件，然后到插件设置页面填写Elasticsearch服务器相关的信息。（点击放大）</p>
+<p><a href="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_15.gif" rel="noopener" target="_blank"><img class="alignnone size-full wp-image-8044" src="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_15.gif" alt="Elasticsearch整合Wordpress" width="1079" height="718" data-pagespeed-url-hash="243247188" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-pagespeed-lsc-url="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_15.gif"></a></p>
+<p>然后就可以将Wordpress的文章以及页面同步到Elasticsearch服务器并开始索引了。</p>
+<p><a href="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_16.gif" rel="noopener" target="_blank"><img class="alignnone size-full wp-image-8045" src="https://wzfou.cdn.bcebos.com/wp-content/uploads/2018/07/zhannei-sousuo_16.gif" alt="Elasticsearch整合Wordpress开始索引" width="1332" height="486" data-pagespeed-url-hash="537747109" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-pagespeed-lsc-url="https://wzfou.com/wp-content/uploads/2018/07/zhannei-sousuo_16.gif"></a></p>
+<h2 id="ftoc-heading-12" class="ftwp-heading">四、总结</h2>
+<p>百度站内搜索引擎适合用在没有使用Https以及百度索引量大的网站，对于新站以及用上了Https的网站使用百度站内搜索引擎非常不利，而Google自定义搜索适合国外的朋友使用，国内的朋友不要折腾了。</p>
+<p>Elasticsearch自建搜索是一个非常不错的工具，功能强大，用于Wordpress的全文搜索真的是“牛刀小试”了，Elasticsearch可以对文档进行索引、搜索、排序、过滤，它能够执行复杂的全文搜索。</p>
+<h5>本文全文引自：<a href="https://wzfou.com/" target="_blank" rel="noopener"> 挖站否： </a> <a href="https://wzfou.com/baidu-google-es/" target="_blank" rel="noopener">https://wzfou.com/baidu-google-es/</a> 版权信息请查看 <a href="https://wzfou.com/" target="_blank" rel="noopener"> 挖站否 </a>站内公告</h5></div></div>
+    </div>
+
+
+
+
+    
+    
+    
+
+
+
+
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #aaa;font-size:14px;">
+            -------------本文结束
+            <i class="fa fa-paw"></i>
+            感谢您的阅读-------------
+        </div>
+        <div style="text-align:center;color: #aaa;font-size:14px;">转载别忘了注明出处哈</div>
+    
+</div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+      <div>
+        <div id="reward-container">
+  <div><span style="color:#aaa;">&#127853;&#127853;&#127853;&#128540;</span></div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    请我吃糖
+  </button>
+  <div id="qr" style="display: none;">
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechatpay.png" alt="Elume 微信支付">
+        <p>微信支付</p>
+      </div>
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/alipay.png" alt="Elume 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+      </div>
+
+    <footer class="post-footer">
+          
+        
+        <div class="post-tags">
+            <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+          
+            <a href="/tags/NexT/" rel="tag"><i class="fa fa-tag"></i> NexT</a>
+          
+        </div>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+              <a href="/2020/01/15/0013_jschangefontsize/" rel="next" title="JavaScript收藏">
+                <i class="fa fa-chevron-left"></i> JavaScript收藏
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+              <a href="/2020/01/28/0015_githubjsdelivrfreecdn/" rel="prev" title="Github + jsDelivr 免费CDN托管js和css文件">
+                Github + jsDelivr 免费CDN托管js和css文件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="gitalk-container"></div>
+  
+
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.png"
+      alt="Elume">
+  <p class="site-author-name" itemprop="name">Elume</p>
+
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <p style="color: #bbb; padding: 0.3em; font-size: 0.8em; text-align: justify;" itemprop="name">若干年后也许往事再题，曾经手指飞舞敲击，打出淡淡的岁月痕迹，那模糊的记忆若再被唤起，心中或仍会激起层层涟漪，但一切都会如浮云消散而去，最终的最终仍是美好于心存寄，或许平平凡凡中那点点的神奇，才最需要去好好的珍惜</p>
+
+
+  <div class="links-of-blogroll motion-element links-of-blogroll-block">
+    <div class="links-of-blogroll-title">
+      <i class="fa  fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://elume.github.io" title="http://elume.github.io">elume</a>
+        </li>
+      
+    </ul>
+  </div>
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#ftwp-header-title"><span class="nav-text">文章目录</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ftoc-heading-1"><span class="nav-text">一、百度站内搜索引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ftoc-heading-2"><span class="nav-text">1.1  百度站内搜索引擎使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ftoc-heading-3"><span class="nav-text">1.2  百度站内搜索引擎不支持Https</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ftoc-heading-4"><span class="nav-text">二、Google自定义搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ftoc-heading-5"><span class="nav-text">2.1  Google自定义搜索使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ftoc-heading-6"><span class="nav-text">2.2  Google自定义搜索不显示问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ftoc-heading-7"><span class="nav-text">三、Elasticsearch自建搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ftoc-heading-8"><span class="nav-text">3.1  安装Elasticsearch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ftoc-heading-9"><span class="nav-text">3.2  安装 IK Analysis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ftoc-heading-10"><span class="nav-text">3.3  配置同义词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ftoc-heading-11"><span class="nav-text">3.4  Elasticsearch整合Wordpress</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ftoc-heading-12"><span class="nav-text">四、总结</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#ftwp-postcontent"><span class="nav-text">本文全文引自： 挖站否：  https://wzfou.com/baidu-google-es/ 版权信息请查看  挖站否 站内公告</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Elume</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">23k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">43 分钟</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span>您是第 </span><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    <span> 位访问本站的人</span></span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye　"></i>
+    </span>
+    <span>总访问次数：</span><span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    <span> 次</span></span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+
+    
+
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  <script src="/js/utils.js?v=7.3.0"></script>
+  <script src="/js/motion.js?v=7.3.0"></script>
+
+  
+  <script src="/js/affix.js?v=7.3.0"></script>
+  <script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.3.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '7299c329ad4f243113e1',
+    clientSecret: 'eadebc209072e110b8aef872578cc32c6cbd996f',
+    repo: 'elume.github.io',
+    owner: 'elume',
+    admin: ['elume'],
+    id: md5(location.pathname),
+      language: 'zh-CN',
+    
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+
+</body>
+</html>
