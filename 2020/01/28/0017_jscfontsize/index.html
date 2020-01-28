@@ -57,19 +57,19 @@
   };
 </script>
 
-  <meta name="description" content="HTML调用Google Font方法">
-<meta name="keywords" content="前端">
+  <meta name="description" content="JS控制字体大小，刷新不变">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTML调用Google Font方法">
-<meta property="og:url" content="https://elume.github.io/2020/01/28/0016_googlefontapi/index.html">
+<meta property="og:title" content="JS控制字体大小，刷新不变">
+<meta property="og:url" content="https://elume.github.io/2020/01/28/0017_jscfontsize/index.html">
 <meta property="og:site_name" content="Elume&#39;s Blog">
-<meta property="og:description" content="HTML调用Google Font方法">
+<meta property="og:description" content="JS控制字体大小，刷新不变">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-28T07:01:16.173Z">
+<meta property="og:updated_time" content="2020-01-28T07:11:04.853Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTML调用Google Font方法">
-<meta name="twitter:description" content="HTML调用Google Font方法">
-  <link rel="canonical" href="https://elume.github.io/2020/01/28/0016_googlefontapi/">
+<meta name="twitter:title" content="JS控制字体大小，刷新不变">
+<meta name="twitter:description" content="JS控制字体大小，刷新不变">
+  <link rel="canonical" href="https://elume.github.io/2020/01/28/0017_jscfontsize/">
 
 
 <script id="page.configurations">
@@ -78,7 +78,7 @@
   };
 </script>
 
-  <title>HTML调用Google Font方法 | Elume's Blog</title>
+  <title>JS控制字体大小，刷新不变 | Elume's Blog</title>
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100451136-2"></script>
   <script>
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://elume.github.io/2020/01/28/0016_googlefontapi/">
+    <link itemprop="mainEntityOfPage" href="https://elume.github.io/2020/01/28/0017_jscfontsize/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Elume">
@@ -279,7 +279,7 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">HTML调用Google Font方法
+          <h1 class="post-title" itemprop="name headline">JS控制字体大小，刷新不变
 
               
             
@@ -299,7 +299,7 @@
                 
               
 
-              <time title="创建时间：2020-01-28 11:55:20 / 修改时间：12:01:16" itemprop="dateCreated datePublished" datetime="2020-01-28T11:55:20+05:00">2020-01-28</time>
+              <time title="创建时间：2020-01-28 12:07:30 / 修改时间：12:11:04" itemprop="dateCreated datePublished" datetime="2020-01-28T12:07:30+05:00">2020-01-28</time>
             </span>
           
             
@@ -339,7 +339,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">207</span>
+              <span title="本文字数">1.6k</span>
             </span>
           
             <span class="post-meta-item">
@@ -349,7 +349,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">1 分钟</span>
+              <span title="阅读时长">3 分钟</span>
             </span>
           
 
@@ -362,18 +362,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>HTML调用Google Font方法</p>
+        <p>JS控制字体大小，刷新不变</p>
 <a id="more"></a>
 
-<ul>
-<li>打开 <code>https://fonts.google.com/</code></li>
-<li>找到需要的字体，点击打开</li>
-<li>在该字体页面，点击 <code>SELECT THIS FONT</code></li>
-<li>然后在 <code>Family Selected</code> 弹窗里面找到 <code>EMBED</code> 选项卡</li>
-<li>复制 <code>Embed Font</code> 里的代码到 HTML（link 和 @import两种形式）</li>
-<li>然后在 <code>Specify in CSS</code> 里复制代码到CSS样式。</li>
-</ul>
 
+<h3 id="效果："><a href="#效果：" class="headerlink" title="效果："></a>效果：</h3><ul>
+<li>链接：<a href="https://codepen.io/nigatoo/pen/jOEeNWr" target="_blank" rel="noopener">https://codepen.io/nigatoo/pen/jOEeNWr</a></li>
+</ul>
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML:"></a>HTML:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;br&gt;</span><br><span class="line">&lt;div class=&quot;font-resizer&quot;&gt;&lt;div class=&quot;font-sizer-buttons&quot;&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;a href=&quot;#&quot; id=&quot;plustext&quot; class=&quot;button&quot; title=&quot;Increase Font Size&quot;&gt;&lt;span&gt;放大+&lt;/span&gt;&lt;/a&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;a href=&quot;#&quot; id=&quot;minustext&quot; class=&quot;button&quot; title=&quot;Decrease Font Size&quot;&gt;&lt;span&gt;缩小-&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;</span><br><span class="line">              &lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> &lt;div id=&quot;text&quot;&gt;</span><br><span class="line">   &lt;p&gt;Font Size&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS:"></a>CSS:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.button&#123;</span><br><span class="line">  margin-left:10px;    </span><br><span class="line">  background-color: #4CAF50; /* Green */</span><br><span class="line">    border: none;</span><br><span class="line">    color: white;</span><br><span class="line">    padding: 15px 32px;</span><br><span class="line">    text-align: center;</span><br><span class="line">    text-decoration: none;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    font-size: 16px;</span><br><span class="line">  border-radius: 5px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="JS"><a href="#JS" class="headerlink" title="JS:"></a>JS:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function resizeText(multiplier) &#123;</span><br><span class="line">    var elem = document.getElementById(&quot;text&quot;);</span><br><span class="line">    var currentSize = elem.style.fontSize || 1;</span><br><span class="line">    elem.style.fontSize = ( parseFloat(currentSize) + (multiplier * 0.2)) + &quot;em&quot;;</span><br><span class="line">	localStorage.setItem(&apos;currentSize&apos;,currentSize);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">document.getElementById(&quot;plustext&quot;).addEventListener(&quot;click&quot;, function() &#123;resizeText(1);&#125;);</span><br><span class="line">document.getElementById(&quot;minustext&quot;).addEventListener(&quot;click&quot;, function() &#123;resizeText(-1);&#125;);</span><br><span class="line"></span><br><span class="line">window.onload = function()&#123;</span><br><span class="line">    var g = localStorage.getItem(&apos;currentSize&apos;);</span><br><span class="line">    document.getElementById(&quot;text&quot;).style.fontSize = g;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
 
@@ -442,13 +442,13 @@
           
         
         <div class="post-tags">
-            <a href="/tags/前端/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
           
         </div>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-              <a href="/2020/01/28/0015_githubjsdelivrfreecdn/" rel="next" title="Github + jsDelivr 免费CDN托管js和css文件">
-                <i class="fa fa-chevron-left"></i> Github + jsDelivr 免费CDN托管js和css文件
+              <a href="/2020/01/28/0016_googlefontapi/" rel="next" title="HTML调用Google Font方法">
+                <i class="fa fa-chevron-left"></i> HTML调用Google Font方法
               </a>
             
           </div>
@@ -456,10 +456,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-              <a href="/2020/01/28/0017_jscfontsize/" rel="prev" title="JS控制字体大小，刷新不变">
-                JS控制字体大小，刷新不变 <i class="fa fa-chevron-right"></i>
-              </a>
-            
           </div>
         </div>
     </footer>
@@ -492,8 +488,17 @@
 
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -607,6 +612,23 @@
 
         </div>
       </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#效果："><span class="nav-text">效果：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML"><span class="nav-text">HTML:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS"><span class="nav-text">CSS:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS"><span class="nav-text">JS:</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
     </div>
   </aside>

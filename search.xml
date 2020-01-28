@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[JS控制字体大小，刷新不变]]></title>
+    <url>%2F2020%2F01%2F28%2F0017_jscfontsize%2F</url>
+    <content type="text"><![CDATA[JS控制字体大小，刷新不变 效果： 链接：https://codepen.io/nigatoo/pen/jOEeNWr HTML:12345678910111213&lt;br&gt;&lt;div class=&quot;font-resizer&quot;&gt;&lt;div class=&quot;font-sizer-buttons&quot;&gt; &lt;a href=&quot;#&quot; id=&quot;plustext&quot; class=&quot;button&quot; title=&quot;Increase Font Size&quot;&gt;&lt;span&gt;放大+&lt;/span&gt;&lt;/a&gt; &lt;a href=&quot;#&quot; id=&quot;minustext&quot; class=&quot;button&quot; title=&quot;Decrease Font Size&quot;&gt;&lt;span&gt;缩小-&lt;/span&gt;&lt;/a&gt;&lt;/div&gt; &lt;/div&gt; &lt;div id=&quot;text&quot;&gt; &lt;p&gt;Font Size&lt;/p&gt;&lt;/div&gt; CSS:123456789101112.button&#123; margin-left:10px; background-color: #4CAF50; /* Green */ border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 5px;&#125; JS:1234567891011121314function resizeText(multiplier) &#123; var elem = document.getElementById(&quot;text&quot;); var currentSize = elem.style.fontSize || 1; elem.style.fontSize = ( parseFloat(currentSize) + (multiplier * 0.2)) + &quot;em&quot;; localStorage.setItem(&apos;currentSize&apos;,currentSize);&#125;document.getElementById(&quot;plustext&quot;).addEventListener(&quot;click&quot;, function() &#123;resizeText(1);&#125;);document.getElementById(&quot;minustext&quot;).addEventListener(&quot;click&quot;, function() &#123;resizeText(-1);&#125;);window.onload = function()&#123; var g = localStorage.getItem(&apos;currentSize&apos;); document.getElementById(&quot;text&quot;).style.fontSize = g;&#125;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[HTML调用Google Font方法]]></title>
     <url>%2F2020%2F01%2F28%2F0016_googlefontapi%2F</url>
     <content type="text"><![CDATA[HTML调用Google Font方法 打开 https://fonts.google.com/ 找到需要的字体，点击打开 在该字体页面，点击 SELECT THIS FONT 然后在 Family Selected 弹窗里面找到 EMBED 选项卡 复制 Embed Font 里的代码到 HTML（link 和 @import两种形式） 然后在 Specify in CSS 里复制代码到CSS样式。]]></content>
